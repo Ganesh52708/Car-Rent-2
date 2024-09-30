@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN & SIGNUP</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function showForm(form) {
+            document.getElementById('loginForm').style.display = form === 'login' ? 'block' : 'none';
+            document.getElementById('signupForm').style.display = form === 'signup' ? 'block' : 'none';
+            document.getElementById('forgotPasswordForm').style.display = form === 'forgot' ? 'block' : 'none';
+            document.getElementById('resetPasswordForm').style.display = form === 'reset' ? 'block' : 'none';
+            document.getElementById('otpForm').style.display = form === 'otp' ? 'block' : 'none';
+        }
+
+        function showOTPForm(email) {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('otpForm').style.display = 'block';
+            document.getElementById('otpEmail').value = email;
+        }
+
+        async function handleSignup(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            const submitButton = document.getElementById('signupButton');
+            const loader = document.getElementById('signupLoader');
+            submitButton.disabled = true;
+            loader.style.display = 'inline-block';
+
+            try {
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                if (response.ok) {
+                    alert('OTP has been sent to your email');
+                    showOTPForm(email);
+                } else {
+                    alert('Error during signup');
+                }
+            } catch (error) {
+                alert('Error during signup');
+            } finally {
+                submitButton.disabled = false;
+                loader.style.display = 'none';
+            }
+        }
+
+        async function handleForgotPassword(event) {
+            event.preventDefault();
+            const email = document.getElementById('forgotEmail').value;
+
+            const submitButton = document.getElementById('forgotPasswordButton');
+            const loader = document.getElementById('forgotPasswordLoader');
+            submitButton.disabled = true;
+            loader.style.display = 'inline-block';
+
+            try {
+                const response = await fetch('/forgot-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                if (response.ok) {
+                    alert('Password reset token has been sent to your email');
+                    showResetForm(email);
+                } else {
+                    alert('Error sending reset token');
+                }
+            } catch (error) {
+                alert('Error sending reset token');
+            } finally {
+                submitButton.disabled = false;
+                loader.style.display = 'none';
+            }
+        }
+
+        function showResetForm(email) {
+            document.getElementById('forgotPasswordForm').style.display = 'none';
+            document.getElementById('resetPasswordForm').style.display = 'block';
+            document.getElementById('resetEmail').value = email;
+        }
+    </script>
+</head>
+<body onload="showForm('login')">
+    <div class="container">
+        <div class="heading-2">
+            <h1>
+                <span>C</span>
+                <span>A</span>
+                <span>R</span>
+                
+                <span>R</span>
+                <span>E</span>
+                <span>N</span>
+                <span>T</span>
+            </h1>
+        </div>
+        <div class="small-container">
+        <div class="side-img">
+            <img src="Designer (1).jpg" alt="">
+        </div>
+        <div class="form_main">
+            <!-- Login Form -->
+            <div id="loginForm">
+                <p class="heading">LOGIN</p>
+                <form action="/login" method="post">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="email"></label>
+                        <input placeholder="Enter your Email" id="username" class="inputField" name="email" type="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="password"></label>
+                        <input placeholder="Password" id="password" class="inputField" name="password" type="password">
+                    </div>
+                    <button id="button" type="submit">Submit</button>
+                    <div class="signupContainer">
+                        <p>Don't have an account?</p>
+                        <a href="javascript:void(0)" onclick="showForm('signup')">Sign up</a>
+                    </div>
+                    <div class="signupContainer">
+                        <p>Forgot your password?</p>
+                        <a href="javascript:void(0)" onclick="showForm('forgot')">Reset Password</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" style="display:none;">
+                <p class="heading">SIGNUP</p>
+                <form action="/signup" method="post" onsubmit="handleSignup(event)">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="name"></label>
+                        <input placeholder="Enter your Name" id="name" class="inputField" name="name" type="text">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="email"></label>
+                        <input placeholder="Enter your Email" id="signupEmail" class="inputField" name="email" type="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="password"></label>
+                        <input placeholder="Password" id="signupPassword" class="inputField" name="password" type="password">
+                    </div>
+                    <button id="signupButton" type="submit">Submit</button>
+                    <div class="loader" id="signupLoader"></div>
+                    <div class="signupContainer">
+                        <p>Already have an account?</p>
+                        <a href="javascript:void(0)" onclick="showForm('login')">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Forgot Password Form -->
+            <div id="forgotPasswordForm" style="display:none;">
+                <p class="heading">RESET PASSWORD</p>
+                <form action="/forgot-password" method="post" onsubmit="handleForgotPassword(event)">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="email"></label>
+                        <input placeholder="Enter your Email" id="forgotEmail" class="inputField" name="email" type="email">
+                    </div>
+                    <button id="forgotPasswordButton" type="submit">Submit</button>
+                    <div class="loader" id="forgotPasswordLoader"></div>
+                    <div class="signupContainer">
+                        <p>Remembered your password?</p>
+                        <a href="javascript:void(0)" onclick="showForm('login')">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Reset Password Form -->
+            <div id="resetPasswordForm" style="display:none;">
+                <p class="heading">NEW PASSWORD</p>
+                <form action="/reset-password" method="post">
+                    <input type="hidden" id="resetEmail" name="email">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="token"></label>
+                        <input placeholder="Enter the token" id="token" class="inputField" name="token" type="text">
+                    </div>
+                    <div class="inputContainer">
+                        <label class="sub_title" for="newPassword"></label>
+                        <input placeholder="Enter your new password" id="newPassword" class="inputField" name="newPassword" type="password">
+                    </div>
+                    <button id="resetPasswordButton" type="submit">Submit</button>
+                    <div class="loader" id="resetPasswordLoader"></div>
+                </form>
+            </div>
+
+            <!-- OTP Verification Form -->
+            <div id="otpForm" style="display:none;">
+                <p class="heading">OTP VERIFICATION</p>
+                <form action="/verify-otp" method="post">
+                    <input type="hidden" id="otpEmail" name="email">
+                    <div class="inputContainer">
+                        <label class="sub_title" for="otp"></label>
+                        <input placeholder="Enter the OTP" id="otp" class="inputField" name="otp" type="text">
+                    </div>
+                    <button id="otpButton" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

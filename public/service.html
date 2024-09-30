@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent Services</title>
+    <link rel="stylesheet" href="/css/service.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-container"></div>
+        <div class="container">
+            <div class="navbar">
+                <div class="min-navbar">
+                    <div class="logo"><i class="fas fa-car-alt me-3"></i>
+                        <h1>CAR RENT</h1>
+                    </div>
+                    <div class="nav-links" id="navLinks">
+                        <a href="/home.htm">Home</a>
+                        <a href="/service.html">Service</a>
+                        <a href="/aboutus.html">About Us</a>
+                        <a href="/contact.html">Contact</a>
+                        <button id="logout" onclick="confirmLogout()">Logout</button>
+                    </div>
+                    <div class="button-1">Get Start</div>
+                </div>
+            </div>
+
+
+
+            <div class="main-img">
+                <div class="container-2">
+                    <h1 id="header">Our Services</h1>
+                </div>
+            </div>
+
+
+            <div class="service-section">
+                <h1>Our Services</h1>
+                <p class="section-description">Explore our wide range of car rental services designed to meet your needs and budget.</p>
+        
+                <div class="service-cards">
+                    <div class="service-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Car Hire</h3>
+                        <p>We offer affordable daily, weekly, and monthly rental services with a variety of cars for every purpose.</p>
+                        <button class="learn-more-btn" onclick="showServiceDetails('Car Hire')">Learn More</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <i class="fas fa-gem"></i>
+                        <h3>Luxury Cars</h3>
+                        <p>Choose from our collection of premium luxury cars for your special events and occasions.</p>
+                        <button class="learn-more-btn" onclick="showServiceDetails('Luxury Cars')">Learn More</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <h3>Airport Transfers</h3>
+                        <p>Enjoy convenient and timely airport transfers with professional chauffeurs and modern vehicles.</p>
+                        <button class="learn-more-btn" onclick="showServiceDetails('Airport Transfers')">Learn More</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <i class="fas fa-road"></i>
+                        <h3>Long Distance Rentals</h3>
+                        <p>We provide the perfect vehicles for long-distance trips, ensuring comfort and reliability.</p>
+                        <button class="learn-more-btn" onclick="showServiceDetails('Long Distance Rentals')">Learn More</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Corporate Rentals</h3>
+                        <p>Our corporate rental services offer flexible and convenient options for your business needs.</p>
+                        <button class="learn-more-btn" onclick="showServiceDetails('Corporate Rentals')">Learn More</button>
+                    </div>
+                </div>
+        
+                <div id="service-details-popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="closePopup()">&times;</span>
+                        <h3 id="service-title">Service Title</h3>
+                        <p id="service-description">Service description will be here.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-section about">
+                        <h2>About Us</h2>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <form>
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+        
+                    <div class="footer-section links">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Cars</a></li>
+                            <li><a href="#">Car Types</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer-section hours">
+                        <h2>Business Hours</h2>
+                        <p>Mon - Friday: 09.00 am to 07.00 pm</p>
+                        <p>Saturday: 10.00 am to 05.00 pm</p>
+                        <p>All Sunday is our vacation</p>
+                    </div>
+        
+                    <div class="footer-section contact">
+                        <h2>Contact Info</h2>
+                        <p>123 Street, New York, USA</p>
+                        <p>Email: info@example.com</p>
+                        <p>Phone: +012 345 67890</p>
+                        <p>Fax: +012 345 67890</p>
+                        <div class="socials">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    &copy; Your Site Name. All rights reserved. | Designed by HTML Codex | Distributed by ThemeWagon
+                </div>
+            </footer>
+
+    </div>
+</div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="service.js">
+        function showServiceDetails(service) {
+    const popup = document.getElementById('service-details-popup');
+    const serviceTitle = document.getElementById('service-title');
+    const serviceDescription = document.getElementById('service-description');
+
+    // Service-specific descriptions
+    const descriptions = {
+        'Car Hire': 'Our car hire service offers flexible rental periods, whether you need a vehicle for a day or several months.',
+        'Luxury Cars': 'For those special moments, our luxury car rental service provides a selection of premium models.',
+        'Airport Transfers': 'Our airport transfer service ensures you get to and from the airport with ease and comfort.',
+        'Long Distance Rentals': 'Planning a road trip? We provide comfortable and reliable vehicles for long-distance travel.',
+        'Corporate Rentals': 'Our corporate car rental services offer flexible solutions for business needs, with premium cars for executives.'
+    };
+
+    serviceTitle.textContent = service;
+    serviceDescription.textContent = descriptions[service];
+
+    popup.style.display = 'flex';
+}
+
+function closePopup() {
+    const popup = document.getElementById('service-details-popup');
+    popup.style.display = 'none';
+}
+
+    </script>
+
+</body>
+</html>

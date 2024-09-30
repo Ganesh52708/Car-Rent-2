@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="navbar">
+                <div class="min-navbar">
+                    <div class="logo"><i class="fas fa-car-alt me-3"></i>
+                        <h1>CAR RENT</h1>
+                    </div>
+                    <div class="nav-links" id="navLinks">
+                        <a href="/home.html">Home</a>
+                        <a href="/service.html">Service</a>
+                        <a href="/aboutus.html">About Us</a>
+                        <a href="/contact.html">Contact</a>
+                        <button id="logout" onclick="confirmLogout()">Logout</button>
+
+                    </div>
+                    <div class="button-1">Get Start</div>
+                </div>
+            </div>
+
+            <div class="container-2">
+                <div class="reservation-form">
+                    <form id="reservationForm" action="/reserve" method="post">
+                        <h2>CONTINUE CAR RESERVATION</h2>
+                        
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
+        
+                        <label for="pickupLocation">Pick-up Location:</label>
+                        <input type="text" id="pickupLocation" name="pickupLocation" required>
+                        
+                        <label for="dropoffLocation">Drop-off Location:</label>
+                        <input type="text" id="dropoffLocation" name="dropoffLocation">
+                        
+                        <label for="pickupDate">Pick-up Date:</label>
+                        <input type="date" id="pickupDate" name="pickupDate" required>
+                        
+                        <label for="dropoffDate">Drop-off Date:</label>
+                        <input type="date" id="dropoffDate" name="dropoffDate">
+                        
+                        <label for="carType">Car Type:</label>
+                        <select id="carType" name="carType" required>
+                            <option value="Mercedes Benz R3">Mercedes Benz R3</option>
+                            <option value="Toyota Corolla Cross">Toyota Corolla Cross</option>
+                            <option value="Tesla Model S Plaid">Tesla Model S Plaid</option>
+                            <option value="BMW X5">BMW X5</option>
+                        </select>
+                        
+                        <button type="submit">Continue Reservation</button>
+                    </form>
+                    <div id="confirmationMessage" style="display:none;">
+                        <p>Your booking is confirmed! Your car will arrive in 30 minutes. Please wait.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-3">
+                <h1 id="text">FEATURES OF OUR CAR</h1>
+              
+                <div class="features-box">
+                  <!-- Previous Button -->
+                  <button class="btn" id="prevBtn">Previous Car</button>
+              
+                  <!-- Car and Features Content -->
+                  <div class="car-and-features">
+                    <!-- Car Features Left -->
+                    <div class="features-left" id="featuresLeft">
+                      <!-- Dynamic features go here -->
+                    </div>
+              
+                    <!-- Car Image -->
+                    <div class="car-image">
+                      <img src="img/car-1.jpg" alt="Car Image" id="carImage">
+                    </div>
+              
+                    <!-- Car Features Right -->
+                    <div class="features-right" id="featuresRight">
+                      <!-- Dynamic features go here -->
+                    </div>
+                  </div>
+              
+                  <!-- Next Button -->
+                  <button class="btn" id="nextBtn">Next Car</button>
+                </div>
+              </div>
+              
+
+              <div class="stats-section">
+                <div class="stat-item">
+                  <i class="fas fa-thumbs-up"></i>
+                  <h2>829+</h2>
+                  <p>Happy Clients</p>
+                </div>
+              
+                <div class="stat-item">
+                  <i class="fas fa-car"></i>
+                  <h2>56+</h2>
+                  <p>Number of Cars</p>
+                </div>
+              
+                <div class="stat-item">
+                  <i class="fas fa-building"></i>
+                  <h2>127+</h2>
+                  <p>Car Center</p>
+                </div>
+              
+                <div class="stat-item">
+                  <i class="fas fa-road"></i>
+                  <h2>589+</h2>
+                  <p>Total Kilometers</p>
+                </div>
+              </div>
+              
+
+
+              <div class="container-4">
+                <h1 class="section-title">CENTAL SERVICES</h1>
+                <div class="services">
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone Reservation</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3>Special Rates</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3>One Way Rental</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                        <h3>Life Insurance</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>City to City</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Free Rides</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam quasi quibusdam ipsa perferendis iusto?</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container-5">
+                <h1 class="section-title">Vehicle Categories</h1>
+                <div class="vehicle-cards">
+                    <div class="card">
+                        <div class="image">
+                            <img src="img/car-1.jpg" alt="Mercedes Benz R3">
+                        </div>
+                        <div class="card-content">
+                            <h2>Mercedes Benz R3</h2>
+                            <p class="review">4.5 Review <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></p>
+                            <p class="price">Rs.7000/Day</p>
+                            <div class="details">
+                                <span><i class="fas fa-users"></i> 4 Seat</span>
+                                <span><i class="fas fa-cogs"></i> AT/MT</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="details">
+                                <span><i class="fas fa-calendar-alt"></i> 2015</span>
+                                <span><i class="fas fa-car"></i> AUTO</span>
+                                <span><i class="fas fa-road"></i> 27K</span>
+                            </div>
+                            <button class="book-btn" onclick="window.location.href='../home.html'">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="image">
+                            <img src="img/car-2.jpg" alt="Toyota Corolla Cross">
+                        </div>
+                        <div class="card-content">
+                            <h2>Toyota Corolla Cross</h2>
+                            <p class="review">3.5 Review <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+                            <p class="price">Rs.5500/Day</p>
+                            <div class="details">
+                                <span><i class="fas fa-users"></i> 4 Seat</span>
+                                <span><i class="fas fa-cogs"></i> AT/MT</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="details">
+                                <span><i class="fas fa-calendar-alt"></i> 2015</span>
+                                <span><i class="fas fa-car"></i> AUTO</span>
+                                <span><i class="fas fa-road"></i> 27K</span>
+                            </div>
+                            <button class="book-btn" onclick="window.location.href='../home.html'">Book Now</button>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="image">
+                            <img src="img/car-3.jpg" alt="Tesla Model S Plaid">
+                        </div>
+                        <div class="card-content">
+                            <h2>Tesla Model S Plaid</h2>
+                            <p class="review">3.8 Review <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+                            <p class="price">Rs.9600/Day</p>
+                            <div class="details">
+                                <span><i class="fas fa-users"></i> 4 Seat</span>
+                                <span><i class="fas fa-cogs"></i> AT/MT</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="details">
+                                <span><i class="fas fa-calendar-alt"></i> 2015</span>
+                                <span><i class="fas fa-car"></i> AUTO</span>
+                                <span><i class="fas fa-road"></i> 27K</span>
+                            </div>
+                            <button class="book-btn" onclick="window.location.href='../home.html'">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="img/car-4.jpg" alt="BMW X5">
+                        </div>
+                        <div class="card-content">
+                            <h2>BMW X5</h2>
+                            <p class="review">4.0 Review <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            <p class="price">Rs.13500/Day</p>
+                            <div class="details">
+                                <span><i class="fas fa-users"></i> 5 Seat</span>
+                                <span><i class="fas fa-cogs"></i> AT/MT</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="details">
+                                <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                                <span><i class="fas fa-car"></i> AUTO</span>
+                                <span><i class="fas fa-road"></i> 20K</span>
+                            </div>
+                            <button class="book-btn" onclick="window.location.href='../home.html'">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="process-section">
+                <div class="container-6">
+                    <h1 class="process-title">Cental <span class="highlight">Process</span></h1>
+                    <p class="process-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita asperiores commodi accusantium at cum harum, excepturi, quia tempora cupiditate! Adipisci facilis modi quisquam quia distinctio.
+                    </p>
+                    <div class="process-cards">
+                        <div class="card-2">
+                            <div class="card-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h2>Come In Contact</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                            <div class="card-number">
+                                <span>01.</span>
+                            </div>
+                        </div>
+                        <div class="card-2">
+                            <div class="card-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h2>Choose A Car</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                            <div class="card-number">
+                                <span>02.</span>
+                            </div>
+                        </div>
+                        <div class="card-2">
+                            <div class="card-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <h2>Enjoy Driving</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                            <div class="card-number">
+                                <span>03.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="driver-list">
+                <!-- Repeat this section for each driver -->
+                <div class="driver-card">
+                  <div class="driver-photo"><img src="img/team-1.jpg" alt="Driver Photo"></div>
+                  <h2 class="driver-name">Martin Doe</h2>
+                  <p class="driver-profession">Professional Driver</p>
+                  <a href="#" class="driver-button">Hire Me</a>
+
+                </div>
+
+                <div class="driver-card">
+                <div class="driver-photo"><img src="img/team-2.jpg" alt="Driver Photo"></div>
+                <h2 class="driver-name">Martin Doe</h2>
+                <p class="driver-profession">Professional Driver</p>
+                <a href="#" class="driver-button">Hire Me</a>
+                </div>
+
+                <div class="driver-card">
+                <div class="driver-photo"><img src="img/team-3.jpg" alt="Driver Photo"></div>
+                <h2 class="driver-name">Martin Doe</h2>
+                <p class="driver-profession">Professional Driver</p>
+                <a href="#" class="driver-button">Hire Me</a>
+                </div>
+
+                <div class="driver-card">
+                <div class="driver-photo"><img src="img/team-4.jpg" alt="Driver Photo"></div>
+                <h2 class="driver-name">Martin Doe</h2>
+                <p class="driver-profession">Professional Driver</p>
+                <a href="#" class="driver-button">Hire Me</a>
+                </div>
+                
+                <!-- Add more driver cards as needed -->
+              </div>
+           
+
+
+
+              <footer>
+                <div class="footer-container">
+                    <div class="footer-section about">
+                        <h2>About Us</h2>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <form>
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+        
+                    <div class="footer-section links">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Cars</a></li>
+                            <li><a href="#">Car Types</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer-section hours">
+                        <h2>Business Hours</h2>
+                        <p>Mon - Friday: 09.00 am to 07.00 pm</p>
+                        <p>Saturday: 10.00 am to 05.00 pm</p>
+                        <p>All Sunday is our vacation</p>
+                    </div>
+        
+                    <div class="footer-section contact">
+                        <h2>Contact Info</h2>
+                        <p>123 Street, New York, USA</p>
+                        <p>Email: info@example.com</p>
+                        <p>Phone: +012 345 67890</p>
+                        <p>Fax: +012 345 67890</p>
+                        <div class="socials">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    &copy; Your Site Name. All rights reserved. | Designed by HTML Codex | Distributed by ThemeWagon
+                </div>
+            </footer>
+            
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="home.js">
+        
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const formData = new FormData(event.target);
+
+    // Send form data via POST request
+    fetch('/submit-reservation', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show confirmation message
+            document.getElementById('confirmationMessage').style.display = 'block';
+            
+            // Optionally reset the form
+            event.target.reset();
+        } else {
+            alert('An error occurred while submitting your reservation. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});
+
+
+async function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/reserve', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                    form.reset(); // Reset the form fields
+                } else {
+                    console.error('Error:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
