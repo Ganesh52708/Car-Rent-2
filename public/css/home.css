@@ -104,7 +104,7 @@ body {
     background-image: url(/img/background\ image.jpg);
     background-size: cover;
   }
-  
+
   .reservation-form {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
@@ -272,9 +272,10 @@ body {
     font-size: 1.2rem;
     color: #ddd;
   }
+
   
   /* Responsive adjustments for smaller screens */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .stats-section {
       flex-direction: column;
       padding: 20px 0;
@@ -283,7 +284,7 @@ body {
     .stat-item {
       margin-bottom: 20px;
     }
-  }
+  } */
   
   
   .container-4 {
@@ -350,6 +351,8 @@ body {
     text-align: center;
     padding: 50px 20px;
     background-color: #fff;
+    background-color: black;
+    margin-bottom: 50px;
   }
   
   .section-title {
@@ -519,7 +522,7 @@ body {
     font-weight: bold;
   }
   
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .process-cards {
         flex-direction: column;
     }
@@ -528,7 +531,7 @@ body {
         width: 80%;
         margin: 10px auto;
     }
-  }
+  } */
   
   
   
@@ -680,7 +683,7 @@ body {
   }
   
   
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
@@ -703,9 +706,9 @@ body {
       width: 80%;
       margin: 10px auto;
     }
-  }
+  } */
   
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .navbar {
       padding: 10px;
       justify-content: space-between;
@@ -734,7 +737,7 @@ body {
       width: 100%;
       margin: 20px 0;
     }
-  }
+  } */
   
   @media (max-width: 480px) {
     .navbar .logo #h1-tag {
@@ -747,7 +750,7 @@ body {
     }
   
     .navbar .nav-links a {
-      font-size: 12px;
+      font-size: 15px;
     }
   
     .reservation-form input, .reservation-form button {
@@ -758,4 +761,127 @@ body {
     .card-content h2, .card-content .price {
       font-size: 18px;
     }
+
+    
+  }
+
+  
+  @media only screen and (max-width: 600px) {
+    .stats-section {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    .navbar .nav-links a {
+      font-size: 15px;
+    }
+  
+    .stat-item {
+      margin-bottom: 20px;
+    }
+    .process-cards {
+      flex-direction: column;
+  }
+
+  .card {
+      width: 80%;
+      margin: 10px auto;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 95%;
+   
+  }
+
+  .navbar .nav-links{
+    gap: 0px;
+  }
+  .logo, .min-navbar {
+    margin-right: 0;
+    font-size: 17px;
+    flex-wrap: wrap;
+  }
+  .min-navbar{
+    width: 100%;
+  }
+  .logo{
+    height: 8vh;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .container-2, .container-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats-section, .services, .vehicle-cards {
+    flex-direction: row;
+  }
+
+  .card-2, .service-card, .driver-card {
+    width: 80%;
+    margin: 10px auto;
+  }
+  .navbar {
+    padding: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar .logo #h1-tag {
+    font-size: 1.5rem;
+  }
+
+  .button-1 {
+    display: none;
+    width: 100px;
+    font-size: 16px;
+    margin-left: 0px;
+  }
+
+  .reservation-form{
+    margin-right: 0px;
+  }
+
+  .features-box{
+    display: none;
+  }
+
+
+  .container-2 {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .container-3{
+    display: none;
+  }
+
+  .stat-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-2, .service-card, .driver-card {
+    width: 91%;
+    margin: 20px 0;
+  }
+
+  .stat-item i{
+    font-size: 24px;
+  }
+  .stat-item h2{
+    font-size: 1.5rem;
+  }
+  .container-4{
+    height: 182vh;
+  }
+
+  .process-description {
+    font-size: 13px;
+  }
+
   }
