@@ -883,5 +883,8 @@ body {
   .process-description {
     font-size: 13px;
   }
+  .footer-section form input{
+    width: 200px;
+  }
 
   }
