@@ -819,6 +819,7 @@ body {
 
   .stats-section, .services, .vehicle-cards {
     flex-direction: row;
+    margin-top: 20px;
   }
 
   .card-2, .service-card, .driver-card {
@@ -877,7 +878,7 @@ body {
     font-size: 1.5rem;
   }
   .container-4{
-    height: 192vh;
+    height: 200vh;
   }
 
   .process-description {

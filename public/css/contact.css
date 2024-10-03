@@ -533,4 +533,8 @@ footer {
   .contact-card{
     width: 300px;
   }
+
+  #logout{
+    display: none;
+  }
   }

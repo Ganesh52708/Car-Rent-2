@@ -410,4 +410,8 @@ footer {
     width: 88%;
   }
 
+  #logout{
+    display: none;
+  }
+
   }
