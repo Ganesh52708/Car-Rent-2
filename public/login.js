@@ -70,7 +70,7 @@ app.post('/signup', async (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'rgmlucifer@gmail.com',
-                pass: 'grozgwifmcmlnxsa'
+                pass: 'gsusadslqftrmpwo'
             }
         });
 
@@ -137,7 +137,7 @@ app.post('/forgot-password', async (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'rgmlucifer@gmail.com',
-                pass: 'grozgwifmcmlnxsa'
+                pass: 'gsusadslqftrmpwo'
             }
         });
 

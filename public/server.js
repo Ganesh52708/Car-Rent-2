@@ -72,7 +72,7 @@ app.post('/signup', async (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'rgmlucifer@gmail.com',
-                pass: 'grozgwifmcmlnxsa'
+                pass: 'gsusadslqftrmpwo'
             }
         });
 
@@ -101,8 +101,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Debug to check environment variables
-console.log('Email User:', 'your-email@gmail.com');
-console.log('Email Pass:', 'your-app-password');
+console.log('Email User:', 'rgmlucifer@gmail.com');
+console.log('Email Pass:', 'gsusadslqftrmpwo');
 
 
 // Reservation Route to Handle Form Submission
@@ -114,7 +114,9 @@ app.post('/reserve', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'rgmlucifer@gmail.com',
-            pass: 'grozgwifmcmlnxsa'
+            pass: 'gsusadslqftrmpwo'
+            
+
         }
     });
     
@@ -195,7 +197,7 @@ app.post('/forgot-password', async (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'rgmlucifer@gmail.com',
-                pass: 'grozgwifmcmlnxsa'
+                pass: 'gsusadslqftrmpwo'
             }
         });
 
