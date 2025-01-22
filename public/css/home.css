@@ -49,6 +49,18 @@ body {
   }
   #logout{
     cursor: pointer;
+    border-radius: 26px;
+    background-color: #1d2236;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+  }
+  #logout:hover{
+    transform: scale(1.08);
+    transition: ease-in-out;
+    background-color: rgb(2, 66, 100);
+    font-size: 15px;
   }
   
   .navbar .nav-links a {
@@ -83,15 +95,16 @@ body {
   
   .button-1 {
     margin-left: 200px;
-    font-size: 22px;
+    font-size: 17px;
     height: 5vh;
     width: 130px;
-    background-color: red;
+    background-color: #4e00f599;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+
   }
   
   .container-2 {
